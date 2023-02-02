@@ -33,7 +33,11 @@ fun UserScreen(
             TextButton(onClick = { onInput() }, modifier = Modifier.weight(1f)) {
                 Text(text = login)
             }
-            Button(onClick = { onGet() }, modifier = Modifier.padding(8.dp, 0.dp)) {
+            Button(
+                onClick = { onGet() },
+                modifier = Modifier.padding(8.dp, 0.dp),
+                enabled = login.isNotBlank()
+            ) {
                 Text(text = "Get")
             }
         }
