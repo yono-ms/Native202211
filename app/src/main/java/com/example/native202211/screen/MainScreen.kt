@@ -34,7 +34,7 @@ fun MainScreen() {
         val draftLogin = rememberSaveable { mutableStateOf("") }
         NavHost(navController = navController, startDestination = NavRoute.HOME.name) {
             composable(NavRoute.HOME.name) {
-                val menuItems = listOf(NavRoute.USER)
+                val menuItems = listOf(NavRoute.USER, NavRoute.CLOCK)
                 HomeScreen(menuItems = menuItems) { navController.navigate(it.name) }
             }
             composable(NavRoute.USER.name) {
@@ -66,6 +66,9 @@ fun MainScreen() {
                 val repos =
                     appDao.loadSelectedRepo(login.value).collectAsState(initial = emptyList())
                 RepoScreen(repos = repos.value)
+            }
+            composable(NavRoute.CLOCK.name) {
+                ClockScreen()
             }
         }
     }

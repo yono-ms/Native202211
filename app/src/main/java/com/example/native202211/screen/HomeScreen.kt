@@ -36,6 +36,6 @@ fun HomeScreen(menuItems: List<NavRoute>, onSelect: (item: NavRoute) -> Unit) {
 @Composable
 fun HomePreview() {
     Native202211Theme {
-        HomeScreen(listOf(NavRoute.HOME)) {}
+        HomeScreen(listOf(NavRoute.HOME, NavRoute.CLOCK)) {}
     }
 }
